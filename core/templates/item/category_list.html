@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}
+    Index
+{% endblock title %}
+
+
+{% block content %}
+
+    
+    <div class="row mt-4">
+        {% for category in categories %}
+        <div class="col-lg-3 mb-4">
+            <a href="{% url 'item:item_list' category.id %}" class="text-decoration-none"><div class="card" style="width: 18rem;">
+                <img src="{{ category.image.url }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                <p class="card-text justify-text-center">{{ category.name }}</p>
+                </div>
+            </div>
+        </div></a>
+        {% endfor %}
+    </div>
+
+    
+{% endblock content %}
+
+
+
+
